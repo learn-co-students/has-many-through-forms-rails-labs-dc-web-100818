@@ -1,1 +1,7 @@
-
+<h1>User Detail Page</h1>
+<p>Username:</p> <%= @user.username %>
+<p>Comments: </p>
+<% @user.comments.each do |comment| %>
+  <p>Content: <% comment.content %></p>
+  <p>Post: <%= link_to comment.post.title, post_path(comment.post) %></p> <br>
+<% end %>
